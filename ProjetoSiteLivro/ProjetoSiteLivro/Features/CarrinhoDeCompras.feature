@@ -24,3 +24,4 @@ Scenario Outline: Quantidade de itens de compra atualiza corretamente adicionand
 Examples: 
 | email                    | senha     |
 | noreply@minutrade.com.br | minutrade |
+
