@@ -29,13 +29,14 @@ namespace ProjetoSiteLivro.Steps
         [Given(@"cliquei no item Entrar no menu horizontal do topo")]
         public void GivenCliqueiNoItemEntrarNoMenuHorizontalDoTopo()
         {
+            System.Threading.Thread.Sleep(2000);
             pagelogin.GoToLogin();
         }
 
         [Given(@"informei o (.*) e (.*)")]
         public void GivenInformeiOEmail(string email, string senha)
         {
-            //System.Threading.Thread.Sleep(2000);
+            System.Threading.Thread.Sleep(2000);
             pagelogin.Login(email, senha);
             
         }
@@ -87,7 +88,10 @@ namespace ProjetoSiteLivro.Steps
         [Then(@"exibe a quantidade (.*) no carrinho de compras para o livro Use a Cabeca Java")]
         public void ThenExibeAQuantidadeNoCarrinhoDeComprasParaOLivroUseACabecaJava(int valor)
         {
-            if(valor == 2)
+            var qnt = pagecarrinhodecompras.RetornarQuantidade();
+            int qnte = Int32.Parse(qnt);
+
+            if(valor == qnte)
             {
                 System.Console.WriteLine("Foi incrementado um valor na quantidade para o mesmo produto");
             }
